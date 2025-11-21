@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- form  -->
+
+    <div class="main">
+        <section class="formSection">
+
+            <form action="">
+                <h2>Fill your Details</h2>
+                <div class="inputOuter">
+                    <label for="name">Name : </label>
+                    <input type="text" name="userName" id="name">
+
+                </div>
+
+                <div class="inputOuter">
+                    <label for="email">Email : </label>
+                    <input type="text" name="userEmail" id="email">
+
+                </div>
+                <div class="inputOuter">
+                    <label for="name">Phone : </label>
+                    <input type="number" name="userNumber" id="number">
+
+                </div>
+                <button class="addBtn">Add Data</button>
+            </form>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.N.</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- data will be inserted here. -->
+
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="error-msg"></div>
+        </section>
+        <!-- popup  -->
+        <div class="popUp">
+            <div class="popUp-container">
+                <h3 class="popUp-h">Do you really want to delete this item?</h3>
+                <div class="popUp-btn-box">
+                    <div class="cancleBtn btn-div"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="confirmBtn btn-div"><i class="fa-solid fa-check"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js">
+
+
+    </script>
+</body>
+
+</html>

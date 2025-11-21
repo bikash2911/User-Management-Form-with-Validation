@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(31, 31, 31);
+  color: white;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.formSection {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+
+.formSection form {
+  width: 33%;
+  height: 33rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 1rem 0.2rem #ccc;
+  padding: 1rem;
+}
+
+.formSection form h2 {
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.inputOuter {
+  margin-bottom: 1rem;
+}
+
+.inputOuter label {
+  display: block;
+  font-size: 1.6rem;
+}
+
+.inputOuter input {
+  width: 100%;
+  height: 3rem;
+}
+
+/* user data table  */
+
+.table-container {
+  width: 100%;
+  height: 100%;
+  padding: 0 1rem;
+  padding-bottom: 1rem;
+  overflow-y: auto;
+  /* धेरै rows भए scroll */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  height: 5.1rem;
+  background-color: green;
+  font-size: 1.7rem;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border: 0.1rem solid black;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+tbody td {
+  background-color: white;
+  color: black;
+  border: 0.1rem solid black;
+  text-align: left;
+  font-size: 1.4rem;
+  padding: 0.5rem;
+}
+
+tbody .td-delete-btn {
+  text-align: center;
+}
+
+tbody td .delete-btn {
+  width: auto;
+  background-color: red;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.1rem;
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+/* user comformation popup for deleting elements */
+
+/* Popup Overlay */
+.popUp {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Popup Box */
+.popUp-container {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  text-align: center;
+  width: 30rem;
+  box-shadow: 0 0.4rem 1.5rem rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.popUp-h {
+  color: #333;
+  font-size: 2rem;
+}
+
+.popUp-btn-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btn-div {
+  padding: 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+/* cancle btn  */
+
+.cancleBtn {
+  background-color: #f5f5f5;
+  color: #444;
+  &:hover {
+    background-color: #f44336;
+    color: white;
+  }
+}
+.cancleBtn i {
+  color: #f44336;
+  &:hover {
+    color: white;
+  }
+}
+.cancleBtn:hover i {
+  color: white;
+}
+
+/* conform btn  */
+.confirmBtn {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  &:hover {
+    background-color: #4caf50;
+    color: white;
+  }
+}
+.confirmBtn i {
+  color: #4caf50;
+}
+.confirmBtn:hover i {
+  color: white;
+}
+
+.fa-solid {
+  font-size: 2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* for error pupup msg for user  */
+.error-msg {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 500;
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.2);
+  display: none;
+  animation: slideIn 0.3s ease forwards;
+  z-index: 1000;
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-msg.success {
+  background-color: #4caf50;
+}
+.error-msg.error {
+  background-color: #f44336;
+  border-left: 5px solid #c62828;
+}
+
+.error-msg.warning {
+  background-color: #ff9800;
+}
+
+/*  btn  */
+
+.formSection button {
+  width: 100%;
+  border: none;
+  background-color: yellow;
+  padding: 0.8rem 0;
+  cursor: pointer;
+  margin-top: 3.5rem;
+}
+
+/* for responsive  */
+
+@media (max-width: 992px) {
+  .formSection form {
+    width: 35%;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  .formSection form {
+    width: 37%;
+  }
+}
+@media (max-width: 697px) {
+  .formSection form {
+    width: 50%;
+  }
+
+  thead th {
+    font-size: 1.5rem;
+  }
+  tbody td {
+    font-size: 1.5rem;
+  }
+
+  tbody td .delete-btn {
+    font-size: 1.5rem;
+  }
+  .table-container {
+    padding: 0 0.5rem;
+    padding-bottom: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  .formSection {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+  .formSection form {
+    width: 50%;
+    height: 100%;
+    padding: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 48%;
+  }
+
+  .formSection form {
+    width: 70%;
+    height: 80%;
+    & h2 {
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+  thead th {
+    font-size: 1.4rem;
+  }
+
+  tbody td .delete-btn {
+    font-size: 1.4rem;
+  }
+  .table-container {
+    padding: 0 0.5rem;
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 392px) {
+  html {
+    font-size: 42%;
+  }
+  .formSection form {
+    height: 60%;
+  }
+}
+@media (max-width: 320px) {
+  html {
+    font-size: 40%;
+  }
+}
