@@ -33,7 +33,14 @@ html {
 .formSection form h2 {
   text-align: center;
   padding: 0.5rem;
+  font-size: 2.4rem;
   margin-bottom: 3rem;
+}
+
+.formSection form input {
+  padding: 1rem;
+  outline: none;
+  font-size: 1.8rem;
 }
 
 .inputOuter {
@@ -42,7 +49,7 @@ html {
 
 .inputOuter label {
   display: block;
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 .inputOuter input {
@@ -54,7 +61,7 @@ html {
 
 .table-container {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   padding: 0 1rem;
   padding-bottom: 1rem;
   overflow-y: auto;
@@ -84,7 +91,7 @@ tbody td {
   color: black;
   border: 0.1rem solid black;
   text-align: left;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   padding: 0.5rem;
 }
 
@@ -285,6 +292,9 @@ tbody td .delete-btn {
   }
 }
 @media (max-width: 576px) {
+  .main {
+    margin-top: 5rem;
+  }
   .formSection {
     height: 100%;
     flex-direction: column;
@@ -292,6 +302,7 @@ tbody td .delete-btn {
     align-items: center;
     gap: 5rem;
   }
+
   .formSection form {
     width: 50%;
     height: 100%;
@@ -330,6 +341,9 @@ tbody td .delete-btn {
   }
   .formSection form {
     height: 60%;
+  }
+  tbody td {
+    font-size: 1.2rem;
   }
 }
 @media (max-width: 320px) {
